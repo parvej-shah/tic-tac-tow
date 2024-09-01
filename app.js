@@ -26,6 +26,8 @@ function isDraw(){
         document.getElementById('game-over-show').classList.add('flex')
         document.getElementById('reset-btn').classList.remove('flex');
         document.getElementById('reset-btn').classList.add('hidden');
+        xCount.length = 0;
+        oCount.length = 0;
         resetGame();
     }
 }
@@ -88,30 +90,15 @@ function resetGame(){
         cell.classList.remove('from-[#FF6F61]','to-[#FF69B4]','text-[#FF1493]')
         cell.classList.add('from-[#FFF0F5]','to-[#FFFACD]')
     }
-    for(let o of oCount){
-        console.log('deleted :' ,o)
-        oCount.pop(o);
-        
-    };
-    for(let x of xCount){
-        console.log('deleted :' ,x)
-        xCount.pop(x);
-    };
-    
+    xCount.length = 0;
+    oCount.length = 0;
 }
 document.getElementById('draw-btn').addEventListener('click', function (){
     document.getElementById('reset-btn').classList.remove('hidden');
     document.getElementById('reset-btn').classList.add('flex');
     document.getElementById('game-over-show').classList.remove('flex')
     document.getElementById('game-over-show').classList.add('hidden')
-    for(let o of oCount){
-        console.log('deleted :' ,o)
-        oCount.pop(o);
-        
-    };
-    for(let x of xCount){
-        console.log('deleted :' ,x)
-        xCount.pop(x);
-    };
+    xCount.length = 0;
+    oCount.length = 0;
 })
 document.getElementById('reset-btn').addEventListener('click', resetGame);
