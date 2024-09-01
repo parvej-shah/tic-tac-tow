@@ -28,14 +28,24 @@
 
     </style>
 </head>
-<body class=" bg-gradient-to-br from-[#FFD1DC] to-[#E6E6FA] poppins-regular">
-  <header class="h-[30dvh] pt-4">
-    <h2 class="text-[#ff389b] text-5xl font-black text-center">Tic-Tac-Toe</h2>
+<body class=" bg-gradient-to-br from-[#FFD1DC] to-[#E6E6FA] poppins-regular h-[100dvh]">
+  <header class="h-[25dvh] pt-4">
+    <h2 class="text-[#ff389b] text-5xl font-black text-center">Tic Tac Toe</h2>
     <p id="winner-text" class="text-center pt-2 text-slate-600 font-medium text-lg"></p>
   </header>
   <main class="h-[70dvh] pb-10">
     <section class="container mx-auto px-3 h-full">
-      <div class="h-full rounded-2xl w-full md:w-3/4 lg:w-2/4 mx-auto grid grid-cols-3 grid-rows-3 border-2 border-white outline-1 outline-dashed outline-[#ff389b] gap-px">
+      <div class="h-full rounded-2xl w-full md:w-3/4 lg:w-2/4 mx-auto grid grid-cols-3 grid-rows-3 border-2 border-white outline-1 outline-dashed outline-[#ff389b] gap-px relative">
+        <!-- game over -->
+        <div id="game-over-show" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-gradient-to-br from-[#FFD1DC] to-[#E6E6FA] h-3/4 w-3/4  justify-center items-center rounded-2xl text-[#ff389b] font-bold text-xl p-4 text-center hidden">
+          <div class="text-center">
+          <p><i class="fa-solid fa-circle-exclamation pl-1 text-yellow-500 text-4xl"></i><br>Opps!<br>Game Draw<br><span class="text-sm text-slate-700 font-medium">Restart to Play again</span>
+          </p>
+          <button id="draw-btn" class="bg-gradient-to-br from-[#98FF98] to-[#FFE5B4] text-lg font-medium text-center flex justify-center items-center rounded-lg px-4 py-1 text-slate-600 w-full mt-4">
+            Restart
+          </button>
+        </div>
+        </div>
         <!-- button 1st line -->
         <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center rounded-tl-2xl">
         
@@ -67,6 +77,11 @@
           
         </button>
       </div>
+    </section>
+    <section class="pt-4 flex justify-center items-center h-[10dvh]">
+      <button id="reset-btn" class="bg-gradient-to-br from-[#98FF98] to-[#FFE5B4] text-lg font-medium text-center flex justify-center items-center rounded-lg px-4 py-1 text-slate-600">
+        Restart
+      </button>
     </section>
   </main>
   <script src="./app.js"></script>
