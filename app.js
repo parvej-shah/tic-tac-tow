@@ -13,11 +13,6 @@ const winningCells = [
     [2,4,6],
 ]
 let winnerIs = '';
-function winner(){
-    if(winnerIs!==''){
-        console.log('Winner is ', winnerIs);
-    }
-}
 /* draw or not */
 function isDraw(){
     if ((xCount.length==5 || oCount.length==5) && (xCount.length!==oCount.length)){
@@ -38,7 +33,6 @@ function gameWinner(){
         const winningCellOne = cellList[winningCell[0]].innerText
         const winningCellTwo = cellList[winningCell[1]].innerText
         const winningCellThree = cellList[winningCell[2]].innerText
-        /* console.log(winningCellOne,winningCellTwo,winningCellThree) */
         if(winningCellOne !=='' && winningCellTwo!=='' && winningCellThree!==''){
             if(winningCellOne === winningCellTwo && winningCellTwo===winningCellThree ){
                 document.getElementById('winner-text').innerHTML = `The Winner is ${winningCellOne}<i class="fa-solid fa-crown text-yellow-500 text-2xl pl-1"></i>`
@@ -62,7 +56,6 @@ for(const cell of cellList){
             turnO = false;
             cell.disabled = true;
             gameWinner()
-            winner();
             isDraw()
         }
         else{
@@ -73,7 +66,6 @@ for(const cell of cellList){
             turnO = true;
             cell.disabled = true;
             gameWinner();
-            winner();
             isDraw();
         }
     })
@@ -93,6 +85,7 @@ function resetGame(){
     xCount.length = 0;
     oCount.length = 0;
 }
+/* Restart after draw */
 document.getElementById('draw-btn').addEventListener('click', function (){
     document.getElementById('reset-btn').classList.remove('hidden');
     document.getElementById('reset-btn').classList.add('flex');
