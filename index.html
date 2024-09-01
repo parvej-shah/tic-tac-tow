@@ -18,10 +18,67 @@
           }
         }
       </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      .poppins-regular {
+        font-family: "Poppins", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    </style>
 </head>
-<body>
-  <div class="h-dvh bg-gradient-to-br from-pink-600 to-pink-300 flex justify-center items-center">
-    <h2 class="text-3xl font-black bg-clip-text bg-gradient-to-l from-rose-900 to-teal-900 text-transparent">Hello Tailwind</h2>
-  </div>
+<body class=" bg-gradient-to-br from-[#FFD1DC] to-[#E6E6FA] poppins-regular">
+  <header class="h-[30dvh] pt-4">
+    <h2 class="text-[#ff389b] text-5xl font-black text-center">Tic-Tac-Toe</h2>
+    <p id="winner-text" class="text-center pt-2 text-slate-600 font-medium text-lg"></p>
+  </header>
+  <main class="h-[70dvh] pb-10">
+    <section class="container mx-auto px-3 h-full">
+      <div class="h-full rounded-2xl w-full md:w-3/4 lg:w-2/4 mx-auto grid grid-cols-3 grid-rows-3 border-2 border-white outline-1 outline-dashed outline-[#ff389b] gap-px">
+        <!-- button 1st line -->
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center rounded-tl-2xl">
+        
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center ">
+          
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center rounded-tr-2xl">
+          
+        </button>
+        <!-- button 2nd line -->
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center">
+          
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center ">
+          
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center">
+          
+        </button>
+        <!-- button 3rd line -->
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center rounded-bl-2xl">
+          
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center ">
+          
+        </button>
+        <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center rounded-br-2xl">
+          
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
 </body>
 </html>
+
+<!-- <button class="game-cell bg-gradient-to-br from-[#FFF0F5] to-[#FFFACD] text-8xl font-black text-center flex justify-center items-center">
+          
+</button>
+<button class="game-cell bg-gradient-to-br from-[#7FFFD4] to-[#008080] text-8xl font-black text-center flex justify-center items-center text-[#46f0e7]">
+  O
+</button>
+<button class="game-cell bg-gradient-to-br from-[#FF6F61] to-[#FF69B4] text-8xl font-black text-center flex justify-center items-center text-[#FF1493]">
+  X
+</button> -->
