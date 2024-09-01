@@ -36,6 +36,21 @@ function gameWinner(){
         if(winningCellOne !=='' && winningCellTwo!=='' && winningCellThree!==''){
             if(winningCellOne === winningCellTwo && winningCellTwo===winningCellThree ){
                 document.getElementById('winner-text').innerHTML = `The Winner is ${winningCellOne}<i class="fa-solid fa-crown text-yellow-500 text-2xl pl-1"></i>`
+                cellList[winningCell[0]].innerText = ''
+                cellList[winningCell[1]].innerText = ''
+                cellList[winningCell[2]].innerText = ''
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                const p3 = document.createElement('p');
+                p1.innerText = winningCellOne;
+                p2.innerText = winningCellTwo;
+                p3.innerText = winningCellThree;
+                p1.classList.add('animate-spin','drop-shadow-sm');
+                p2.classList.add('animate-spin','drop-shadow-sm');
+                p3.classList.add('animate-spin','drop-shadow-sm');
+                cellList[winningCell[0]].appendChild(p1)
+                cellList[winningCell[1]].appendChild(p2)
+                cellList[winningCell[2]].appendChild(p3)
                 winnerIs = winningCellOne;
             }
         }
