@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interio-A3</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,6 +11,20 @@
         tailwind.config = {
           theme: {
             extend: {
+              keyframes: {
+                slideIn: {
+                  '0%': { transform: 'translateX(100%)' },
+                  '100%': { transform: 'translateX(0)' },
+                },
+                slideOut: {
+                  '0%': { transform: 'translateX(0)' },
+                  '100%': { transform: 'translateX(-100%)' },
+                },
+              },
+              animation: {
+                slideIn: 'slideIn 0.5s ease-out forwards',
+                slideOut: 'slideOut 0.5s ease-out forwards',
+              },
               colors: {
                 clifford: '#da373d',
               }
@@ -28,11 +42,20 @@
     </style>
 </head>
 <body class=" bg-gradient-to-br from-[#FFD1DC] to-[#E6E6FA] poppins-regular h-[100dvh]">
-  <header class="h-[25dvh] pt-4">
+  <header class="h-[25dvh] pt-4 container mx-auto px-2">
     <h2 class="text-[#ff389b] text-5xl font-black text-center">Tic Tac Toe</h2>
+    <!-- Player details -->
+    <div class="flex justify-between mt-3">
+      <div class="text-center flex flex-col">
+        Player 1
+        <p id="playerOne" class="font-medium text-lg animate-bounce text-red-500"></p></div>
+      <div class="text-center flex flex-col">Player 2<p id="playerTwo"  class="text-gray-700 font-medium text-lg"></p></div>
+    </div>
+    <!-- Winner -->
     <p id="winner-text" class="text-center pt-2 text-slate-600 font-medium text-lg"></p>
   </header>
-  <main class="h-[70dvh] pb-10">
+  <!-- Game bar -->
+  <main id="game-bar" class="h-[70dvh] pb-10 hidden">
     <section class="container mx-auto px-3 h-full">
       <div class="h-full rounded-2xl w-full md:w-3/4 lg:w-2/4 mx-auto grid grid-cols-3 grid-rows-3 border-2 border-white outline-1 outline-dashed outline-[#ff389b] gap-px relative">
         <!-- game over -->
@@ -83,6 +106,52 @@
       </button>
     </section>
   </main>
+  <!-- Player initial set up -->
+  <main id="initial-page" class="h-[70dvh] pb-10 flex items-center justify-center container mx-auto px-2">
+    <!-- player selection -->
+    <section class="p-10 border border-[#f82a91] rounded-2xl" id="player-select-section">
+      <h3 class="text-xl font-semibold text-gray-700 text-center">Do You want to play with your Friend or Robot.</h3>
+      <div class="flex gap-6 justify-center mt-6">
+        <div class="form-control">
+          <label class="lebel cursor-pointer flex items-center gap-2">
+            <input type="radio" name="radio-5" class="radio radio-secondary" checked="checked" value="friend"/>
+            <span class="text-lg text-gray-700 font-medium">Friend</span>
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="lebel cursor-pointer flex items-center gap-2">
+            <input type="radio" name="radio-5" class="radio radio-secondary" value="robot"/>
+            <span class="text-lg text-gray-700 font-medium">Robot</span>
+          </label>
+        </div>
+      </div>
+      <div class="flex justify-center mt-6">
+      <button id="next-btn-player-select" class="bg-gradient-to-br from-[#98FF98] to-[#FFE5B4] text-lg font-medium text-center flex justify-center items-center rounded-lg px-8 py-2 text-slate-600">
+        Next
+      </button></div>
+    </section>
+    <!-- Player Detials -->
+    <section id="player-info-section" class="p-10 border border-[#f82a91] rounded-2xl hidden ">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-lg text-gray-800 font-medium">Your Name</span>
+          </label>
+          <input id="player-name" type="text" placeholder="Your Name"class="input bg-transparent border border-[#ff389b]/40" required />
+        </div>
+        <div id="friend-name-div" class="form-control mt-2 hidden">
+          <label class="label">
+            <span class="label-text text-lg text-gray-800 font-medium">Your Friend Name</span>
+          </label>
+          <input id="friend-name" type="text" placeholder="Your Friend Name"class="input bg-transparent border border-[#ff389b]/40" required />
+        </div>
+        <div class="form-control mt-6">
+          <button id="next-btn-details" class="bg-gradient-to-br from-[#98FF98] to-[#FFE5B4] text-lg font-medium text-center flex justify-center items-center rounded-lg px-4 py-1 text-slate-600">
+            Next
+          </button>
+        </div>
+    </section>
+  </main>
+  <script src="./utilitis.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
