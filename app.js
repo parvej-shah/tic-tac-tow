@@ -105,7 +105,6 @@ let turnO = true;
 function playingRobot(){
     if(isActive){
         const randomIndex = Math.floor(Math.random()*9);
-    console.log(randomIndex);
         if(cellList[randomIndex].innerText==='O' || cellList[randomIndex].innerText==='X'){
             const randomIndexTime = Math.floor(Math.random()*timingList.length);
             setTimeout(playingRobot,timingList[randomIndexTime]);

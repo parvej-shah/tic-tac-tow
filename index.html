@@ -13,17 +13,17 @@
             extend: {
               keyframes: {
                 slideIn: {
-                  '0%': { transform: 'translateX(100%)' },
-                  '100%': { transform: 'translateX(0)' },
+                  '0%': { opacity:0},
+                  '100%': { opacity:1 },
                 },
                 slideOut: {
-                  '0%': { transform: 'translateX(0)' },
-                  '100%': { transform: 'translateX(-100%)' },
+                  '0%': { opacity:0 },
+                  '100%': { opacity:0 },
                 },
               },
               animation: {
-                slideIn: 'slideIn 0.5s ease-out forwards',
-                slideOut: 'slideOut 0.5s ease-out forwards',
+                slideIn: 'slideIn 0.8s ease-in-out',
+                slideOut: 'slideOut 0.8s ease-in out',
               },
               colors: {
                 clifford: '#da373d',
@@ -131,7 +131,7 @@
       </button></div>
     </section>
     <!-- Player Detials -->
-    <section id="player-info-section" class="p-10 border border-[#f82a91] rounded-2xl hidden ">
+    <section id="player-info-section" class="p-10 border border-[#f82a91] rounded-2xl hidden">
         <div class="form-control">
           <label class="label">
             <span class="label-text text-lg text-gray-800 font-medium">Your Name</span>
